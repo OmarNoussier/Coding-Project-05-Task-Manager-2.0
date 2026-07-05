@@ -1,0 +1,25 @@
+   /*globals.css
+   Single Tailwind v4 import. In v4 there is no long @tailwind
+   base/components/utilities block anymore — one @import pulls in
+   the whole framework, and PostCSS (see postcss.config.mjs) turns
+   it into real CSS at build time.
+   ══════════════════════════════════════════════════════ */
+@import "tailwindcss";
+
+/* @theme lets us define design tokens that become real Tailwind
+   utilities. Declaring my accent here (instead of hardcoding a hex
+   everywhere) is what keeps the "Midnight Violet" palette consistent
+   across every component — change it once, it changes everywhere. */
+@theme {
+  --color-violet-glow: #a78bfa;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Base page styling for the dark theme. Kept tiny on purpose — all
+   other styling is done with Tailwind utility classes in the JSX so
+   the design intent is visible right next to the markup. */
+body {
+  background-color: #0b0713;
+  color: #e9e4f5;
+  font-family: var(--font-sans);
+}
